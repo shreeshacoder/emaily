@@ -7,10 +7,10 @@ module.exports = app => {
       amount: 500,
       currency: "usd",
       source: req.body.id, // obtained with Stripe.js
-      description: "Charge Emaily"
+      description: "Charge SurveyLi"
     });
     req.user.credits += 5;
-    const user = req.user.save();
+    const user = await req.user.save();
     res.send(user);
   });
 };
